@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>b3cec872-c41d-4fc8-8cde-4bb2687c16cc</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Firefly</RootNamespace>
+    <AssemblyName>Firefly</AssemblyName>
+    <TargetFramework>net4.8</TargetFramework>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <IntermediateOutputPath>obj\Debug\</IntermediateOutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <IntermediateOutputPath>obj\Release\</IntermediateOutputPath>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Properties\FireflyAPI.version" />
+    <None Include="Properties\FireflyAPI.version.props" />
+  </ItemGroup>
+  <Import Project="Properties\FireflyAPI.version.props" />
+  <ItemGroup>
+    <KSPVersionFile Include="Properties\FireflyAPI.version">
+      <Destination>$(RepoRootPath)/GameData/FireflyAPI/FireflyAPI.version</Destination>
+      <KSP_Version_Min>1.12</KSP_Version_Min>
+    </KSPVersionFile>
+  </ItemGroup>
+  <PropertyGroup>
+    <BinariesOutputRelativePath>GameData/FireflyAPI/Plugins</BinariesOutputRelativePath>
+    <GenerateKSPAssemblyAttribute>true</GenerateKSPAssemblyAttribute>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="KSPBuildTools" Version="0.0.4" />
+  </ItemGroup>
+ </Project>
