@@ -28,6 +28,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <KSPBT_ModRoot>$(SolutionDir)/GameData/FireflyAPI/</KSPBT_ModRoot>
+  </PropertyGroup>
   <ItemGroup>
     <None Include="Properties\FireflyAPI.version" />
     <None Include="Properties\FireflyAPI.version.props" />
@@ -35,15 +38,15 @@
   <Import Project="Properties\FireflyAPI.version.props" />
   <ItemGroup>
     <KSPVersionFile Include="Properties\FireflyAPI.version">
-      <Destination>$(RepoRootPath)/GameData/FireflyAPI/FireflyAPI.version</Destination>
+	  <Destination>$(KSPBT_ModRoot)FireflyAPI.version</Destination>
       <KSP_Version_Min>1.12</KSP_Version_Min>
     </KSPVersionFile>
   </ItemGroup>
   <PropertyGroup>
-    <BinariesOutputRelativePath>GameData/FireflyAPI/Plugins</BinariesOutputRelativePath>
-    <GenerateKSPAssemblyAttribute>true</GenerateKSPAssemblyAttribute>
+	<KSPBT_ModPluginFolder>Plugins</KSPBT_ModPluginFolder>
+    <KSPBT_GenerateAssemblyAttribute>true</KSPBT_GenerateAssemblyAttribute>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="KSPBuildTools" Version="0.0.4" />
+    <PackageReference Include="KSPBuildTools" Version="1.1.1" />
   </ItemGroup>
  </Project>
